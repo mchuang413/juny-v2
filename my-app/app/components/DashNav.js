@@ -9,7 +9,6 @@ import {
   motion,
 } from "framer-motion";
 import useMeasure from "react-use-measure";
-import Link from "next/link";
 
 const Example = () => {
   return (
@@ -24,11 +23,41 @@ const Example = () => {
         }}
       >
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-neutral-950/90 to-neutral-950/0" />
+        {/* Glass UI Lesson Container */}
+        <div className="relative z-10 flex justify-center items-center py-10">
+          <div className="max-w-4xl w-full p-6 rounded-xl bg-neutral-900/60 backdrop-blur-md shadow-lg">
+            <h2 className="text-3xl font-bold text-purple-400 mb-6">
+              Course Title
+            </h2>
+            <div className="space-y-4">
+              {/* Placeholder Lesson Items */}
+              {Array.from({ length: 5 }).map((_, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between p-4 bg-neutral-800/50 rounded-lg hover:bg-neutral-800/70 transition-all"
+                >
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">
+                      Lesson {index + 1}: Lesson Title
+                    </h3>
+                    <p className="text-sm text-neutral-400">
+                      Lesson description goes here.
+                    </p>
+                  </div>
+                  <button className="px-4 py-2 text-sm font-medium text-purple-300 bg-neutral-900/80 rounded-lg hover:bg-purple-400 hover:text-white transition-colors">
+                    Start
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
       <div className="h-screen bg-neutral-50" />
     </>
   );
 };
+
 
 const FlyoutNav = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -52,7 +81,7 @@ const FlyoutNav = () => {
         <Logo />
         <div className="hidden gap-6 lg:flex">
           <Links />
-          <CTAs />
+
         </div>
         <MobileMenu />
       </div>
@@ -61,6 +90,7 @@ const FlyoutNav = () => {
 };
 
 const Logo = ({ color = "white" }) => {
+  // Temp logo from https://logoipsum.com/
   return (
     <div className="flex items-center gap-2">
       <span className="text-2xl font-bold" style={{ color }}>
@@ -139,19 +169,6 @@ const NavLink = ({ children, href, FlyoutContent }) => {
   );
 };
 
-const CTAs = () => {
-  return (
-    <div className="flex items-center gap-3">
-      <Link href="/signup">
-        <button className="flex items-center gap-2 rounded-lg border-2 border-white px-4 py-2 font-semibold text-white transition-colors hover:bg-white hover:text-black">
-          <FaUserCircle />
-          <span>Sign in</span>
-        </button>
-      </Link>
-    </div>
-  );
-};
-
 const AboutUsContent = () => {
   return (
     <div className="grid h-fit w-full grid-cols-12 shadow-xl lg:h-72 lg:w-[600px] lg:shadow-none xl:w-[750px]">
@@ -211,34 +228,22 @@ const AboutUsContent = () => {
   );
 };
 
-const PricingContent = () => {
+const TradingContent = () => {
   return (
     <div className="w-full bg-white p-6 shadow-none lg:w-[250px] lg:shadow-xl">
       <div className="grid grid-cols-2 lg:grid-cols-1">
         <div className="mb-3 space-y-3">
-          <h3 className="font-semibold">For Individuals</h3>
+          <h3 className="font-semibold">Portfolio</h3>
           <a href="#" className="block text-sm hover:underline">
-            Introduction
+            Overview
           </a>
           <a href="#" className="block text-sm hover:underline">
-            Pay as you go
-          </a>
-        </div>
-        <div className="mb-6 space-y-3">
-          <h3 className="font-semibold">For Companies</h3>
-          <a href="#" className="block text-sm hover:underline">
-            Startups
-          </a>
-          <a href="#" className="block text-sm hover:underline">
-            SMBs
-          </a>
-          <a href="#" className="block text-sm hover:underline">
-            Enterprise
+            Positions
           </a>
         </div>
       </div>
       <button className="w-full rounded-lg border-2 border-neutral-950 px-4 py-2 font-semibold transition-colors hover:bg-neutral-950 hover:text-white">
-        Contact sales
+        Contact support
       </button>
     </div>
   );
@@ -425,22 +430,17 @@ export default Example;
 
 const LINKS = [
   {
-    text: "About us",
-    href: "#",
-    component: AboutUsContent,
+    text: "Learn",
+    href: "/learn",
   },
   {
-    text: "Pricing",
-    href: "#",
-    component: PricingContent,
+    text: "Trading Sim",
+    href: "/sim",
+    component: TradingContent,
   },
   {
-    text: "Careers",
+    text: "BRO DAVID TELL ME WHAT TO PUT ON THE NAVBAR",
     href: "#",
     component: CareersContent,
-  },
-  {
-    text: "Documentation",
-    href: "#",
   },
 ];

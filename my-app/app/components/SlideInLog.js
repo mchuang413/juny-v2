@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowUpRight, FiStar } from "react-icons/fi";
-import Cookies from "js-cookie"
+import Cookies from "js-cookie";
 
 export const SlideInAuth = () => {
   return (
@@ -17,19 +17,13 @@ export const SlideInAuth = () => {
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [retypePassword, setRetypePassword] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSignup = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    if (password !== retypePassword) {
-      setMessage("Passwords do not match");
-      return;
-    }
-
     try {
-      const response = await fetch("http://localhost:8000/signup", {
+      const response = await fetch("http://localhost:8000/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,13 +38,15 @@ const Form = () => {
 
       if (data.status === "success") {
         Cookies.set("email", email);
-        Cookies.set("auth", "auth-token");
-        setMessage("Signup successful");
+        Cookies.set("auth", data.token || "auth-token");
+        setMessage("Login successful");
+
+        window.location.href = "/dash";
       } else {
-        setMessage(data.message || "Signup failed");
+        setMessage(data.message || "Login failed");
       }
     } catch (error) {
-      console.error("Signup error:", error);
+      console.error("Login error:", error);
       setMessage("An error occurred");
     }
   };
@@ -68,10 +64,10 @@ const Form = () => {
           variants={primaryVariants}
           className="mb-2 text-center text-4xl font-semibold text-white"
         >
-          Create your account
+          Log in to your account
         </motion.h1>
 
-        <form onSubmit={handleSignup} className="w-full">
+        <form onSubmit={handleLogin} className="w-full">
           <motion.div variants={primaryVariants} className="mb-2 w-full">
             <label
               htmlFor="email-input"
@@ -90,7 +86,7 @@ const Form = () => {
             />
           </motion.div>
 
-          <motion.div variants={primaryVariants} className="mb-2 w-full">
+          <motion.div variants={primaryVariants} className="mb-4 w-full">
             <label
               htmlFor="password-input"
               className="mb-1 inline-block text-sm font-medium text-white"
@@ -108,46 +104,13 @@ const Form = () => {
             />
           </motion.div>
 
-          <motion.div variants={primaryVariants} className="mb-4 w-full">
-            <label
-              htmlFor="rt-password-input"
-              className="mb-1 inline-block text-sm font-medium text-white"
-            >
-              Re-type Password<span className="text-red-600">*</span>
-            </label>
-            <input
-              id="rt-password-input"
-              type="password"
-              value={retypePassword}
-              onChange={(e) => setRetypePassword(e.target.value)}
-              placeholder="Re-type your password"
-              className="w-full rounded border-[1px] border-slate-300 px-2.5 py-1.5 focus:outline-indigo-600"
-              required
-            />
-          </motion.div>
-
-          <motion.div
-            variants={primaryVariants}
-            className="mb-4 flex w-full items-start gap-1.5 text-white"
-          >
-            <input
-              type="checkbox"
-              id="terms-checkbox"
-              className="h-4 w-4 accent-indigo-600"
-              required
-            />
-            <label htmlFor="terms-checkbox" className="text-xs">
-              By signing up, I agree to the terms and conditions, privacy policy, and cookie policy
-            </label>
-          </motion.div>
-
           <motion.button
             variants={primaryVariants}
             whileTap={{ scale: 0.985 }}
             type="submit"
             className="mb-1.5 w-full rounded bg-indigo-600 px-4 py-2 text-center font-medium text-white transition-colors hover:bg-indigo-700"
           >
-            Sign up
+            Log in
           </motion.button>
 
           {message && (
@@ -156,9 +119,9 @@ const Form = () => {
             </motion.p>
           )}
           <motion.p variants={primaryVariants} className="text-xs text-white">
-            Already have an account?{" "}
-            <a className="text-indigo-600 underline" href="/login">
-              Sign in
+            Don't have an account?{" "}
+            <a className="text-indigo-600 underline" href="/signup">
+              Sign up
             </a>
           </motion.p>
         </form>
@@ -183,9 +146,7 @@ const SupplementalContent = () => {
       <motion.div
         initial="initial"
         whileInView="animate"
-        transition={{
-          staggerChildren: 0.05,
-        }}
+        transition={{ staggerChildren: 0.05 }}
         viewport={{ once: true }}
         className="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-t from-slate-950/90 to-slate-950/0 p-8"
       >
@@ -193,14 +154,13 @@ const SupplementalContent = () => {
           className="mb-2 text-3xl font-semibold leading-[1.25] text-white lg:text-4xl"
           variants={primaryVariants}
         >
-          Learn the smart way to invest
-          <br />
-          on Juny
+          Welcome back to Juny
         </motion.h2>
         <motion.p
           variants={primaryVariants}
           className="mb-6 max-w-md text-sm text-slate-300"
         >
+          Continue learning and investing the smart way.
         </motion.p>
       </motion.div>
     </div>
@@ -230,25 +190,8 @@ const Logo = () => {
 };
 
 const primaryVariants = {
-  initial: {
-    y: 25,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-  },
-};
-
-const avatarVariants = {
-  initial: {
-    x: 10,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-  },
+  initial: { y: 25, opacity: 0 },
+  animate: { y: 0, opacity: 1 },
 };
 
 export default SlideInAuth;
