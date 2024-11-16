@@ -23,9 +23,28 @@ const Example = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-neutral-950/90 to-neutral-950/0" />
+
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-violet-700 to-black" />
+        <motion.h1
+          className="absolute top-1/4 left-8 z-10 text-6xl font-bold text-white"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
+          The Journey Begins
+        </motion.h1>
+        <motion.h2
+          className="absolute top-1/3 left-8 z-10 text-5xl font-bold text-white"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4, ease: "easeIn" }}
+        >
+          Navigate your Financial Future
+        </motion.h2>
+
       </div>
-      <div className="h-screen bg-neutral-50" />
+
+      <div className="h-screen bg-black" />
     </>
   );
 };
@@ -142,10 +161,16 @@ const NavLink = ({ children, href, FlyoutContent }) => {
 const CTAs = () => {
   return (
     <div className="flex items-center gap-3">
+      <Link href="/login">
+        <button className="flex items-center gap-2 rounded-lg border-2 border-white px-4 py-2 font-semibold text-white transition-colors hover:bg-white hover:text-black">
+          <FaUserCircle />
+          <span>Log in</span>
+        </button>
+      </Link>
       <Link href="/signup">
         <button className="flex items-center gap-2 rounded-lg border-2 border-white px-4 py-2 font-semibold text-white transition-colors hover:bg-white hover:text-black">
           <FaUserCircle />
-          <span>Sign in</span>
+          <span>Create Account</span>
         </button>
       </Link>
     </div>

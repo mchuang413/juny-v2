@@ -61,8 +61,8 @@ def signup():
         "email" : email,
         "password" : password,
         "premium" : False,
-        "temp1" : 0,
-        "temp2" : 0,
+        "streak" : 0,
+        "shells" : 0,
         "temp3" : 0,
     })
 
