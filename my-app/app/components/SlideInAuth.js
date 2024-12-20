@@ -29,7 +29,7 @@ const Form = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/signup", {
+      const response = await fetch("https://juny-v2-backend-4zbur.ondigitalocean.app//signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
