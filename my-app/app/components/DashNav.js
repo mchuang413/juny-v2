@@ -21,8 +21,8 @@ const FlyoutNav = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full px-6 text-white transition-all duration-300 ease-out lg:px-12 ${
-        scrolled ? "bg-neutral-950 py-3 shadow-xl" : "bg-neutral-950/0 py-6 shadow-none"
+      className={`fixed top-0 z-50 w-full px-6 text-white transition-all duration-300 ease-out lg:px-12 border-b-2 ${
+        scrolled ? "bg-neutral-950 py-3 shadow-xl border-neutral-800" : "bg-neutral-950/0 py-6 shadow-none border-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between">
@@ -31,7 +31,6 @@ const FlyoutNav = () => {
           <Links />
           <CTAs />
         </div>
-        <MobileMenu />
       </div>
     </nav>
   );

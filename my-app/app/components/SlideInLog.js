@@ -119,7 +119,7 @@ const Form = () => {
             </motion.p>
           )}
           <motion.p variants={primaryVariants} className="text-xs text-white">
-            Don't have an account?{" "}
+            Dont have an account?{" "}
             <a className="text-indigo-600 underline" href="/signup">
               Sign up
             </a>

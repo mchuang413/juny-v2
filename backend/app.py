@@ -3,6 +3,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
@@ -38,12 +39,29 @@ def login():
         return jsonify({"status": "error", "message": "User not found"}), 404
 
     if user["password"] == password:
-        response = jsonify({"status": "success", "message": "Login successful"})
+        # Handle streak calculation
+        last_login = user.get("last_login")
+        today = datetime.utcnow().date()
+
+        if last_login:
+            last_login_date = datetime.strptime(last_login, "%Y-%m-%d").date()
+            if last_login_date == today - timedelta(days=1):
+                user["streak"] += 1
+            elif last_login_date < today - timedelta(days=1):
+                user["streak"] = 1  # Reset streak
+        else:
+            user["streak"] = 1  # First login sets streak to 1
+
+        collection.update_one(
+            {"email": email},
+            {"$set": {"last_login": today.strftime("%Y-%m-%d"), "streak": user["streak"]}}
+        )
+
+        response = jsonify({"status": "success", "message": "Login successful", "streak": user["streak"]})
         response.set_cookie("email", email)
         return response, 200
     else:
         return jsonify({"status": "error", "message": "Invalid password"}), 401
-
 
 @app.route("/signup", methods=["POST"])
 def signup():
@@ -54,21 +72,35 @@ def signup():
     if not email or not password:
         return jsonify({"status": "error", "message": "email and password are required"}), 400
 
-    if collection.find_one({"email" : email}):
+    if collection.find_one({"email": email}):
         return jsonify({"status": "error", "message": "Email already exists"}), 400
 
     collection.insert_one({
-        "email" : email,
-        "password" : password,
-        "premium" : False,
-        "streak" : 0,
-        "shells" : 0,
-        "temp3" : 0,
+        "email": email,
+        "password": password,
+        "premium": False,
+        "streak": 0,
+        "shells": 0,
+        "temp3": 0,
+        "last_login": None,
     })
 
     response = jsonify({"status": "success", "message": "User registered successfully"})
     response.set_cookie("email", email)
     return response, 201
+
+@app.route("/streak", methods=["GET"])
+def get_streak():
+    email = request.args.get("email")  # Retrieve email from query parameters
+    if not email:
+        return jsonify({"status": "error", "message": "Email is required"}), 400
+
+    user = collection.find_one({"email": email})
+    if not user:
+        return jsonify({"status": "error", "message": "User not found"}), 404
+
+    return jsonify({"status": "success", "streak": user.get("streak", 0)}), 200
+
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8000, debug=True)

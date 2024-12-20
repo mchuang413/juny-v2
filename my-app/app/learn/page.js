@@ -4,7 +4,7 @@ import React from "react";
 import Card from "../components/ShimmerBorderCard";
 import { motion } from "framer-motion";
 
-export default function Dash() {
+export default function Learn() {
   const featured = [
     { id: 1, title: "Unit XX Lesson XX", description: "XXXXXXXXXXXX" },
     { id: 2, title: "Unit XX Lesson XX", description: "XXXXXXXXXXXX" },
@@ -44,7 +44,15 @@ export default function Dash() {
         ></div>
 
         {/* Main Content */}
-        <div className="relative z-10 max-w-6xl mx-auto pt-20 px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-6xl mx-auto pt-20 px-4 sm:px-6 lg:px-8 mt-20">
+          <motion.h1
+            className="text-6xl font-bold text-white mb-10 "
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+          Learn
+          </motion.h1>
           {/* Header Section */}
           <div className="flex flex-col md:flex-row items-center justify-between mb-10 space-y-4 md:space-y-0">
             <motion.button
@@ -71,7 +79,7 @@ export default function Dash() {
           </div>
 
           {/* Curriculum Section */}
-          <h1 className="text-4xl font-bold text-white mb-6 mt-10">Curriculum</h1>
+          <h1 className="text-4xl font-bold text-white mb-10 mt-10">Curriculum</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {curriculum.map((lesson) => (
               <Card key={lesson.id} title={lesson.title} description={lesson.description} />

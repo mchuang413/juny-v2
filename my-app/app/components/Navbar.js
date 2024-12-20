@@ -13,39 +13,48 @@ import Link from "next/link";
 
 const Example = () => {
   return (
-    <>
-      <FlyoutNav />
-      <div
-        className="relative min-h-screen"
-        style={{
-          backgroundImage: "url(/imgs/random/12.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+<>
+  <FlyoutNav />
+  <div
+    className="relative min-h-screen"
+    style={{
+      backgroundImage: "url(/imgs/random/12.jpg)",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    <div className="absolute inset-0 z-0 bg-gradient-to-b from-violet-700 to-black" />
+    {/* Text Section */}
+    <div className="z-10 text-left absolute top-1/4 left-8">
+      <motion.h1
+        className="text-6xl font-bold bg-clip-text text-white "
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
       >
+        The Journey Begins
+      </motion.h1>
+      <motion.h2
+        className="ml-2 mt-4 text-4xl font-bold bg-clip-text text-violet-300 text-decoration-line: underline"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.4, ease: "easeIn" }}
+      >
+        Navigate your Financial Future
+      </motion.h2>
+    </div>
 
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-violet-700 to-black" />
-        <motion.h1
-          className="absolute top-1/4 left-8 z-10 text-6xl font-bold text-white"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          The Journey Begins
-        </motion.h1>
-        <motion.h2
-          className="absolute top-1/3 left-8 z-10 text-5xl font-bold text-white"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, ease: "easeIn" }}
-        >
-          Navigate your Financial Future
-        </motion.h2>
-
-      </div>
-
-      <div className="h-screen bg-black" />
-    </>
+    {/* Add the image to the right side */}
+    <div className="absolute top-1/4 right-8 z-10">
+      <img 
+        src="/landing/idle.png" 
+        alt="Idle" 
+        className="w-auto h-auto" 
+        style={{ maxWidth: "2000px" }}
+      />
+    </div>
+  </div>
+</>
   );
 };
 
@@ -184,7 +193,7 @@ const AboutUsContent = () => {
         <div>
           <h2 className="mb-2 text-xl font-semibold text-white">About us</h2>
           <p className="mb-6 max-w-xs text-sm text-neutral-400">
-            Placeholder is the world's leading placeholder company.
+            Placeholder
           </p>
         </div>
         <a
