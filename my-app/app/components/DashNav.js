@@ -31,6 +31,7 @@ const FlyoutNav = () => {
           <Links />
           <CTAs />
         </div>
+        <MobileMenu />
       </div>
     </nav>
   );
