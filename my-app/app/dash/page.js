@@ -15,7 +15,7 @@ export default function Dash() {
         if (!email) throw new Error("Email cookie not found.");
 
         const response = await fetch(
-          `http://127.0.0.1:8000/streak?email=${encodeURIComponent(email)}`,
+          `https://juny-v2-backend-4zbur.ondigitalocean.app/streak?email=${encodeURIComponent(email)}`,
           { method: "GET" }
         );
 
