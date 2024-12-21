@@ -1,19 +1,27 @@
 import { FiCloudLightning } from "react-icons/fi";
 import { motion } from "framer-motion";
 
-const ShimmerBorderCard = ({ title, description }) => {
+const ShimmerBorderCard = ({ title, description, photo }) => {
   return (
-    <div className="group relative mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-slate-800 p-0.5 transition-all duration-500 hover:scale-[1.01] hover:bg-slate-800/50">
-      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[7px] bg-slate-900 p-8 transition-colors duration-500 group-hover:bg-slate-800">
-        <FiCloudLightning className="relative z-10 mb-10 mt-2 rounded-full border-2 border-indigo-500 bg-slate-900 p-4 text-7xl text-indigo-500" />
-    
-        <h4 className="relative z-10 mb-4 w-full text-3xl font-bold text-slate-50">
-          {title || "Default Title"}
-        </h4>
+    <div className="group relative mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-indigo-950 p-0.5 transition-all duration-500 hover:scale-[1.01] hover:bg-indigo-700">
+      <div className="relative z-10 flex flex-col items-center justify-center overflow-hidden rounded-[7px] bg-indigo-950 p-0 transition-colors duration-500 group-hover:bg-indigo-800">
+        {photo && (
+          <img
+            src={photo}
+            alt="Card Photo"
+            className="w-full h-48 object-cover rounded-t-[7px]"
+          />
+        )}
 
-        <p className="relative z-10 text-slate-400 break-words text-center max-h-24 overflow-y-auto">
-          {description || "Default description goes here. Provide a description as a prop to override this text."}
-        </p>
+        <div className="p-8 w-full flex flex-col items-center">
+          <h4 className="relative z-10 mb-4 w-full text-3xl font-bold text-slate-50 text-center">
+            {title || "Default Title"}
+          </h4>
+
+          <p className="relative z-10 text-slate-400 break-words text-center max-h-24 overflow-y-auto">
+            {description || "Default description goes here. Provide a description as a prop to override this text."}
+          </p>
+        </div>
       </div>
 
       <motion.div

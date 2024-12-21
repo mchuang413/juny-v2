@@ -245,5 +245,6 @@ export default Example;
 const LINKS = [
   { text: "Learn", href: "/learn" },
   { text: "Trading Sim", href: "/sim", component: TradingContent },
+  { text: "Shop", href: "/shop" },
   { text: "Dashboard", href: "/dash" },
 ];

@@ -35,7 +35,7 @@ const Example = () => {
         The Journey Begins
       </motion.h1>
       <motion.h2
-        className="ml-2 mt-4 text-4xl font-bold bg-clip-text text-violet-300 text-decoration-line: underline"
+        className="ml-2 mt-4 text-4xl font-bold bg-clip-text text-violet-300"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.4, ease: "easeIn" }}
@@ -44,7 +44,6 @@ const Example = () => {
       </motion.h2>
     </div>
 
-    {/* Add the image to the right side */}
     <div className="absolute top-1/4 right-8 z-10">
       <img 
         src="/landing/idle.png" 
