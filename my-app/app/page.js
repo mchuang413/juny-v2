@@ -1,15 +1,14 @@
 "use client";
 import Navbar from "./components/Navbar";
-import FAQ from "./components/FAQs";
 import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-[#120024] to-[#00132e] text-white">
+    <main className="min-h-screen bg-black text-white">
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="flex flex-col items-center justify-center text-center py-24 px-6">
+      <section className="flex flex-col items-center justify-center text-center py-24 px-6 bg-black">
         <motion.h1
           className="text-5xl md:text-6xl font-bold mb-6"
           initial={{ opacity: 0, y: 40 }}
@@ -26,11 +25,11 @@ export default function Home() {
         >
           Join 600+ students already using Juny to master investing through
           interactive lessons, real-time simulations, and a competitive
-          community. Build real-world financial skills in an engaging, game-like
-          environment.
+          community. Build real-world financial skills in an engaging,
+          game-like environment.
         </motion.p>
         <motion.a
-          href="https://your-juny-app-link.com"
+          href="https://juny-rmq3.vercel.app/"
           className="bg-gradient-to-r from-purple-700 to-blue-700 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-3 rounded-2xl text-lg font-semibold shadow-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -41,7 +40,7 @@ export default function Home() {
       </section>
 
       {/* MISSION SECTION */}
-      <section className="py-24 px-8 bg-gradient-to-b from-[#0a0016] to-[#00132e] text-center">
+      <section className="py-24 px-8 text-center bg-black">
         <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
         <p className="max-w-3xl mx-auto text-lg text-gray-300">
           Financial literacy shouldn’t be reserved for adults or hidden behind
@@ -55,7 +54,7 @@ export default function Home() {
       </section>
 
       {/* CORE FEATURES SECTION */}
-      <section className="py-24 px-8 text-center">
+      <section className="py-24 px-8 text-center bg-black">
         <h2 className="text-4xl font-bold mb-12">Core Features</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {[
@@ -94,7 +93,7 @@ export default function Home() {
       </section>
 
       {/* IMPACT SECTION */}
-      <section className="py-24 px-8 bg-gradient-to-b from-[#120024] to-[#000814] text-center">
+      <section className="py-24 px-8 text-center bg-black">
         <h2 className="text-4xl font-bold mb-10">Our Impact</h2>
         <ul className="text-gray-300 text-lg mb-8 space-y-2">
           <li>🌍 600 active users building financial confidence</li>
@@ -109,7 +108,7 @@ export default function Home() {
       </section>
 
       {/* JOURNEY SECTION */}
-      <section className="py-24 px-8 text-center">
+      <section className="py-24 px-8 text-center bg-black">
         <h2 className="text-4xl font-bold mb-10">The Journey</h2>
         <div className="space-y-4 text-gray-300">
           <p>
@@ -128,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* JUNY+ SECTION */}
-      <section className="py-24 px-8 bg-gradient-to-b from-[#00132e] to-[#0b0020] text-center">
+      <section className="py-24 px-8 text-center bg-black">
         <h2 className="text-4xl font-bold mb-6">Optional Upgrade: Juny+</h2>
         <p className="max-w-3xl mx-auto text-gray-300 mb-10 text-lg">
           Unlock even more with Juny+. Juny+ gives power users unlimited access
@@ -148,7 +147,7 @@ export default function Home() {
       </section>
 
       {/* JOIN US SECTION */}
-      <section className="py-24 px-8 text-center bg-gradient-to-b from-[#0b0020] to-[#00132e]">
+      <section className="py-24 px-8 text-center bg-black">
         <motion.h2
           className="text-4xl font-bold mb-4"
           initial={{ opacity: 0, y: 30 }}
@@ -163,7 +162,7 @@ export default function Home() {
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           <a
-            href="https://your-juny-app-link.com"
+            href="https://juny-rmq3.vercel.app/"
             className="bg-gradient-to-r from-purple-700 to-blue-700 px-8 py-3 rounded-2xl font-semibold shadow-lg hover:from-purple-600 hover:to-blue-600"
           >
             Try Juny Free
@@ -182,11 +181,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ SECTION */}
-      <FAQ />
-
       {/* FINAL SECTION */}
-      <div className="h-screen bg-black bg-gradient-to-b from-black via-blue-900 flex justify-center items-center">
+      <div className="h-screen bg-black flex justify-center items-center">
         <motion.h1
           className="text-6xl font-bold text-white"
           initial={{ opacity: 0, y: 50 }}
