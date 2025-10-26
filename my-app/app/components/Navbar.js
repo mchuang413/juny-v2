@@ -32,7 +32,8 @@ const Example = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        The Journey Begins
+        Learn to Invest — The Fun, Simple, and Smarter Way
+
       </motion.h1>
       <motion.h2
         className="ml-2 mt-4 text-4xl font-bold bg-clip-text text-violet-300"
@@ -40,7 +41,7 @@ const Example = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.4, ease: "easeIn" }}
       >
-        Navigate your Financial Future
+        Join 600+ students already using Juny to master investing through interactive lessons, real-time simulations, and a competitive community. Build real-world financial skills in an engaging, game-like environment.
       </motion.h2>
     </div>
 
