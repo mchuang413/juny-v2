@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Style for webkit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 12px; /* Height of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border: 2px solid black; /* Border for the thumb */
+    border-radius: 10px; /* Rounded corners */
+    background-color: transparent; /* Transparent background */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    border-color: #333; /* Darker border on hover */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: black; /* Transparent track */
+  }
+  
+  /* For Firefox */
+  html {
+    scrollbar-width: thick; /* Thin scrollbar */
+    scrollbar-color: black; /* Transparent track and thumb */
+  }
+  

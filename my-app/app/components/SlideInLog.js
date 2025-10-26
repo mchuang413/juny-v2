@@ -23,7 +23,7 @@ const Form = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8000/login", {
+      const response = await fetch("https://juny-v2-backend-4zbur.ondigitalocean.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -119,7 +119,7 @@ const Form = () => {
             </motion.p>
           )}
           <motion.p variants={primaryVariants} className="text-xs text-white">
-            Don't have an account?{" "}
+            Dont have an account?{" "}
             <a className="text-indigo-600 underline" href="/signup">
               Sign up
             </a>
