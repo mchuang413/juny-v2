@@ -36,7 +36,7 @@ const Example = () => {
 
       </motion.h1>
       <motion.h2
-        className="ml-2 mt-4 text-4xl font-bold bg-clip-text text-violet-300"
+        className="ml-2 mt-4 text-4xl font-bold bg-clip-text text-violet-300 z-2"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.4, ease: "easeIn" }}
@@ -45,7 +45,7 @@ const Example = () => {
       </motion.h2>
     </div>
 
-    <div className="absolute top-1/4 right-8 z-10">
+    <div className="absolute top-1/4 right-8 z-0">
       <img 
         src="/landing/idle.png" 
         alt="Idle" 
