@@ -293,25 +293,3 @@ const MobileMenu = () => {
 };
 
 export default Example;
-
-const LINKS = [
-  {
-    text: "About us",
-    href: "#",
-    component: AboutUsContent,
-  },
-  {
-    text: "Pricing",
-    href: "#",
-    component: PricingContent,
-  },
-  {
-    text: "Careers",
-    href: "#",
-    component: CareersContent,
-  },
-  {
-    text: "Documentation",
-    href: "#",
-  },
-];
