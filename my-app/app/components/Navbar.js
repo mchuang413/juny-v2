@@ -31,7 +31,7 @@ const Example = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          The Journey Begins
+          Learn to Invest
         </motion.h1>
         <motion.h2
           className="absolute top-1/3 left-8 z-10 text-5xl font-bold text-white"
@@ -39,7 +39,7 @@ const Example = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, ease: "easeIn" }}
         >
-          Navigate your Financial Future
+          The Fun, Simple, and Smarter Way
         </motion.h2>
 
       </div>
