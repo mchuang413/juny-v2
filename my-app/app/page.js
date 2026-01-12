@@ -23,10 +23,10 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
         >
-          Join 600+ students already using Juny to master investing through
-          interactive lessons, real-time simulations, and a competitive
-          community. Build real-world financial skills in an engaging,
-          game-like environment.
+          Join 2,000+ weekly active students using Juny to learn investing through
+          personalized, gamified lessons, real-time simulations, and friendly
+          competition. Build real-world financial skills in an engaging,
+          game-like environment designed for beginners.
         </motion.p>
         <motion.a
           href="https://juny-rmq3.vercel.app/"
@@ -60,11 +60,11 @@ export default function Home() {
           {[
             {
               title: "Interactive Lessons",
-              desc: "Over 50 visual units covering stocks, ETFs, risk management, and strategy — complete with animations, quizzes, and scenario-based learning.",
+              desc: "Over 50 visual units covering stocks, ETFs, risk management, and strategy — complete with animations, quizzes, and scenario-based learning. Lessons adapt to user progress, making learning feel personal and interactive rather than overwhelming.",
             },
             {
               title: "Paper Trading Simulator",
-              desc: "Invest without risk using real-time market data via Alpaca API. Test strategies and track performance across the S&P 500.",
+              desc: "Invest without risk using real-time market data via the Alpaca API. Test strategies, build portfolios, and track performance across the S&P 500 while learning how your decisions play out over time.",
             },
             {
               title: "Stock News Hub",
