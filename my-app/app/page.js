@@ -8,22 +8,22 @@ const features = [
   {
     title: "Interactive Lessons",
     desc: "50+ visual units covering stocks, ETFs, and risk management. Lessons adapt to progress so learning feels personal, not overwhelming.",
-    image: "image1.png",
+    image: "/public/image1.png",
   },
   {
     title: "Paper Trading Simulator",
     desc: "Trade with real-time market data via the Alpaca API. Build portfolios and see how decisions play out over time — risk free.",
-    image: "image2.png",
+    image: "/public/image2.png",
   },
   {
     title: "Stock News Hub",
     desc: "Market news rewritten in student-friendly language that directly connects to what users are trading and learning.",
-    image: "image3.png",
+    image: "/public/image3.png",
   },
   {
     title: "Leaderboard",
     desc: "Daily and weekly rankings that keep learning motivating, competitive, and game-like — never stressful.",
-    image: "image4.png",
+    image: "/public/image4.png",
   },
 ];
 
