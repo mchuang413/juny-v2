@@ -4,29 +4,6 @@ import Navbar from "./components/Navbar";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const features = [
-  {
-    title: "Interactive Lessons",
-    desc: "50+ visual units covering stocks, ETFs, and risk management. Lessons adapt to progress so learning feels personal, not overwhelming.",
-    image: "/public/image1.png",
-  },
-  {
-    title: "Paper Trading Simulator",
-    desc: "Trade with real-time market data via the Alpaca API. Build portfolios and see how decisions play out over time — risk free.",
-    image: "/public/image2.png",
-  },
-  {
-    title: "Stock News Hub",
-    desc: "Market news rewritten in student-friendly language that directly connects to what users are trading and learning.",
-    image: "/public/image3.png",
-  },
-  {
-    title: "Leaderboard",
-    desc: "Daily and weekly rankings that keep learning motivating, competitive, and game-like — never stressful.",
-    image: "/public/image4.png",
-  },
-];
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -95,43 +72,117 @@ export default function Home() {
       </section>
 
       {/* FEATURES */}
-      <section className="px-6 py-32 bg-gradient-to-b from-black via-purple-950/20 to-black">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            Core Features
-          </h2>
+<section className="px-6 py-32 bg-gradient-to-b from-black via-purple-950/20 to-black">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-4xl font-bold text-center mb-16">
+      Core Features
+    </h2>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {features.map((f, i) => (
-              <motion.div
-                key={i}
-                className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
-                  shadow-lg shadow-black/40 hover:-translate-y-1 transition"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-              >
-                <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  {f.desc}
-                </p>
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      
+      {/* Feature 1 */}
+      <motion.div
+        className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
+          shadow-lg shadow-black/40 hover:-translate-y-1 transition"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3 className="text-xl font-semibold mb-3">Interactive Lessons</h3>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          50+ visual units covering stocks, ETFs, and risk management. Lessons adapt to progress so learning feels personal, not overwhelming.
+        </p>
 
-                <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
-                  <Image
-                    src="{f.image}"
-                    alt={f.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    priority={i === 0}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
+          <Image
+            src="/image1.png"
+            alt="Interactive Lessons"
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         </div>
-      </section>
+      </motion.div>
+
+      {/* Feature 2 */}
+      <motion.div
+        className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
+          shadow-lg shadow-black/40 hover:-translate-y-1 transition"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <h3 className="text-xl font-semibold mb-3">Paper Trading Simulator</h3>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          Trade with real-time market data via the Alpaca API. Build portfolios and see how decisions play out over time — risk free.
+        </p>
+
+        <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
+          <Image
+            src="/image2.png"
+            alt="Paper Trading Simulator"
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        </div>
+      </motion.div>
+
+      {/* Feature 3 */}
+      <motion.div
+        className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
+          shadow-lg shadow-black/40 hover:-translate-y-1 transition"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <h3 className="text-xl font-semibold mb-3">Stock News Hub</h3>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          Market news rewritten in student-friendly language that directly connects to what users are trading and learning.
+        </p>
+
+        <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
+          <Image
+            src="/image3.png"
+            alt="Stock News Hub"
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        </div>
+      </motion.div>
+
+      {/* Feature 4 */}
+      <motion.div
+        className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
+          shadow-lg shadow-black/40 hover:-translate-y-1 transition"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
+        <h3 className="text-xl font-semibold mb-3">Leaderboard</h3>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          Daily and weekly rankings that keep learning motivating, competitive, and game-like — never stressful.
+        </p>
+
+        <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
+          <Image
+            src="/image4.png"
+            alt="Leaderboard"
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
 
       {/* IMPACT */}
       <section className="px-6 py-32">
