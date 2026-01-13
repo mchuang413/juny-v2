@@ -2,6 +2,30 @@
 
 import Navbar from "./components/Navbar";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
+const features = [
+  {
+    title: "Interactive Lessons",
+    desc: "50+ visual units covering stocks, ETFs, and risk management. Lessons adapt to progress so learning feels personal, not overwhelming.",
+    image: "image1.png",
+  },
+  {
+    title: "Paper Trading Simulator",
+    desc: "Trade with real-time market data via the Alpaca API. Build portfolios and see how decisions play out over time — risk free.",
+    image: "image2.png",
+  },
+  {
+    title: "Stock News Hub",
+    desc: "Market news rewritten in student-friendly language that directly connects to what users are trading and learning.",
+    image: "image3.png",
+  },
+  {
+    title: "Leaderboard",
+    desc: "Daily and weekly rankings that keep learning motivating, competitive, and game-like — never stressful.",
+    image: "image4.png",
+  },
+];
 
 export default function Home() {
   return (
@@ -30,7 +54,10 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Join <span className="text-white font-semibold">2,000+ weekly active students</span>{" "}
+            Join{" "}
+            <span className="text-white font-semibold">
+              2,000+ weekly active students
+            </span>{" "}
             using Juny to learn investing through personalized, gamified lessons,
             real-time simulations, and friendly competition.
           </motion.p>
@@ -52,11 +79,17 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
           <p className="text-lg text-gray-300 leading-relaxed">
-            Financial literacy shouldn’t be reserved for adults or hidden behind jargon.
-            <br /><br />
-            Juny was built to make learning about money approachable, personalized, and genuinely fun.
-            Whether you’re just getting started or curious how finance really works, Juny turns
-            complex ideas into <span className="text-white font-medium">gamified lessons you can see, play, and practice</span>.
+            Financial literacy shouldn’t be reserved for adults or hidden behind
+            jargon.
+            <br />
+            <br />
+            Juny was built to make learning about money approachable,
+            personalized, and genuinely fun. Whether you’re just getting started
+            or curious how finance really works, Juny turns complex ideas into{" "}
+            <span className="text-white font-medium">
+              gamified lessons you can see, play, and practice
+            </span>
+            .
           </p>
         </div>
       </section>
@@ -64,30 +97,15 @@ export default function Home() {
       {/* FEATURES */}
       <section className="px-6 py-32 bg-gradient-to-b from-black via-purple-950/20 to-black">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Core Features</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">
+            Core Features
+          </h2>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "Interactive Lessons",
-                desc: "50+ visual units covering stocks, ETFs, and risk management. Lessons adapt to progress so learning feels personal, not overwhelming.",
-              },
-              {
-                title: "Paper Trading Simulator",
-                desc: "Trade with real-time market data via the Alpaca API. Build portfolios and see how decisions play out over time — risk free.",
-              },
-              {
-                title: "Stock News Hub",
-                desc: "Market news rewritten in student-friendly language that directly connects to what users are trading and learning.",
-              },
-              {
-                title: "Leaderboard",
-                desc: "Daily and weekly rankings that keep learning motivating, competitive, and game-like — never stressful.",
-              },
-            ].map((f, i) => (
+            {features.map((f, i) => (
               <motion.div
                 key={i}
-                className="rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
+                className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
                   shadow-lg shadow-black/40 hover:-translate-y-1 transition"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -95,9 +113,19 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
               >
                 <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
-                <p className="text-sm text-gray-300 leading-relaxed">{f.desc}</p>
-                <div className="mt-6 h-28 rounded-xl bg-black/40 flex items-center justify-center text-gray-500 text-sm">
-                  Visual Preview
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  {f.desc}
+                </p>
+
+                <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
+                  <Image
+                    src="{f.image}"
+                    alt={f.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    priority={i === 0}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
               </motion.div>
             ))}
@@ -128,9 +156,15 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-10">The Journey</h2>
           <div className="space-y-4 text-gray-300 text-lg">
-            <p><strong>June 2024:</strong> First prototype launched.</p>
-            <p><strong>August 2024:</strong> Alpaca integration + Stock News Hub.</p>
-            <p><strong>2025–Present:</strong> Scaled to ~2,000 weekly users.</p>
+            <p>
+              <strong>June 2024:</strong> First prototype launched.
+            </p>
+            <p>
+              <strong>August 2024:</strong> Alpaca integration + Stock News Hub.
+            </p>
+            <p>
+              <strong>2025–Present:</strong> Scaled to ~2,000 weekly users.
+            </p>
           </div>
         </div>
       </section>
@@ -138,9 +172,12 @@ export default function Home() {
       {/* JUNY+ */}
       <section className="px-6 py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Optional Upgrade: Juny+</h2>
+          <h2 className="text-4xl font-bold mb-6">
+            Optional Upgrade: Juny+
+          </h2>
           <p className="text-lg text-gray-300 mb-10">
-            Juny+ unlocks advanced tools for power users while keeping Juny free and accessible for everyone.
+            Juny+ unlocks advanced tools for power users while keeping Juny free
+            and accessible for everyone.
           </p>
 
           <ul className="text-gray-300 space-y-2 mb-8">
@@ -169,8 +206,8 @@ export default function Home() {
         </motion.h2>
 
         <p className="max-w-2xl mx-auto text-gray-300 mb-10">
-          Built by students, for students — empowering the next generation through
-          personalized, gamified finance education.
+          Built by students, for students — empowering the next generation
+          through personalized, gamified finance education.
         </p>
 
         <div className="flex justify-center gap-4">
