@@ -71,40 +71,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURES */}
+      {/* FEATURES — STACKED VERTICALLY */}
       <section className="px-6 py-32 bg-gradient-to-b from-black via-purple-950/20 to-black">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16">
             Core Features
           </h2>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-col gap-12">
             {/* Feature 1 */}
             <motion.div
               className="group rounded-3xl overflow-hidden bg-[#0b0020] border border-purple-800/40
-                shadow-lg shadow-black/40 hover:-translate-y-1 transition"
+                shadow-lg shadow-black/40"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative h-56 w-full overflow-hidden bg-black/40">
+              <div className="relative h-72 w-full">
                 <Image
                   src="/image1.png"
                   alt="Interactive Lessons"
                   fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold mb-4">
                   Interactive Lessons
                 </h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  50+ visual units covering stocks, ETFs, and risk management.
+                <p className="text-gray-300 text-lg">
+                  50+ visual units covering stocks, ETFs, and risk management with
+                  adaptive progression that makes learning intuitive.
                 </p>
               </div>
             </motion.div>
@@ -112,29 +112,29 @@ export default function Home() {
             {/* Feature 2 */}
             <motion.div
               className="group rounded-3xl overflow-hidden bg-[#0b0020] border border-purple-800/40
-                shadow-lg shadow-black/40 hover:-translate-y-1 transition"
+                shadow-lg shadow-black/40"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <div className="relative h-56 w-full overflow-hidden bg-black/40">
+              <div className="relative h-72 w-full">
                 <Image
                   src="/image2.png"
                   alt="Paper Trading Simulator"
                   fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold mb-4">
                   Paper Trading Simulator
                 </h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Trade with real-time market data — risk free.
+                <p className="text-gray-300 text-lg">
+                  Practice investing with real-time market data and zero risk,
+                  helping users build confidence before using real money.
                 </p>
               </div>
             </motion.div>
@@ -142,29 +142,29 @@ export default function Home() {
             {/* Feature 3 */}
             <motion.div
               className="group rounded-3xl overflow-hidden bg-[#0b0020] border border-purple-800/40
-                shadow-lg shadow-black/40 hover:-translate-y-1 transition"
+                shadow-lg shadow-black/40"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="relative h-56 w-full overflow-hidden bg-black/40">
+              <div className="relative h-72 w-full">
                 <Image
                   src="/image3.png"
                   alt="Stock News Hub"
                   fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold mb-4">
                   Stock News Hub
                 </h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Market news rewritten in student-friendly language.
+                <p className="text-gray-300 text-lg">
+                  Curated market news rewritten in student-friendly language and
+                  directly tied to what users are trading and learning.
                 </p>
               </div>
             </motion.div>
@@ -172,86 +172,33 @@ export default function Home() {
             {/* Feature 4 */}
             <motion.div
               className="group rounded-3xl overflow-hidden bg-[#0b0020] border border-purple-800/40
-                shadow-lg shadow-black/40 hover:-translate-y-1 transition"
+                shadow-lg shadow-black/40"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="relative h-56 w-full overflow-hidden bg-black/40">
+              <div className="relative h-72 w-full">
                 <Image
                   src="/image4.png"
                   alt="Leaderboard"
                   fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">
+              <div className="p-8">
+                <h3 className="text-2xl font-semibold mb-4">
                   Leaderboard
                 </h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  Daily and weekly rankings that keep learning competitive.
+                <p className="text-gray-300 text-lg">
+                  Daily and weekly rankings that keep learning competitive,
+                  motivating, and game-like without added pressure.
                 </p>
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* IMPACT */}
-      <section className="px-6 py-32">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-10">Our Impact</h2>
-          <ul className="text-lg text-gray-300 space-y-2 mb-10">
-            <li>🌍 ~2,000 weekly active users</li>
-            <li>📈 1.5+ years of continuous iteration</li>
-            <li>🏆 3rd Place — Congressional App Challenge</li>
-          </ul>
-
-          <blockquote className="italic text-gray-400 max-w-2xl mx-auto">
-            “Juny made investing feel like a game instead of a guessing contest.
-            It taught me more in a week than a semester of economics.”
-            <br />— High School Student, California
-          </blockquote>
-        </div>
-      </section>
-
-      {/* JOURNEY */}
-      <section className="px-6 py-32 bg-gradient-to-b from-black via-purple-950/20 to-black">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-10">The Journey</h2>
-          <div className="space-y-4 text-gray-300 text-lg">
-            <p><strong>June 2024:</strong> First prototype launched.</p>
-            <p><strong>August 2024:</strong> Alpaca integration + Stock News Hub.</p>
-            <p><strong>2025–Present:</strong> Scaled to ~2,000 weekly users.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* JUNY+ */}
-      <section className="px-6 py-32">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Optional Upgrade: Juny+</h2>
-          <p className="text-lg text-gray-300 mb-10">
-            Juny+ unlocks advanced tools for power users while keeping Juny free
-            and accessible for everyone.
-          </p>
-
-          <ul className="text-gray-300 space-y-2 mb-8">
-            <li>✅ Unlimited lessons</li>
-            <li>✅ Unlimited simulator access</li>
-            <li>✅ Curated portfolios</li>
-            <li>✅ Expanded news feed</li>
-            <li>✅ AI-powered investing feedback</li>
-          </ul>
-
-          <p className="text-sm text-gray-400 italic">
-            Juny stays focused on education — Juny+ simply adds depth.
-          </p>
         </div>
       </section>
 
