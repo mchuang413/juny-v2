@@ -157,28 +157,32 @@ export default function Home() {
 
       {/* Feature 4 */}
       <motion.div
-        className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
-          shadow-lg shadow-black/40 hover:-translate-y-1 transition"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-      >
-        <h3 className="text-xl font-semibold mb-3">Leaderboard</h3>
-        <p className="text-sm text-gray-300 leading-relaxed">
-          Daily and weekly rankings that keep learning motivating, competitive, and game-like — never stressful.
-        </p>
+  key={i}
+  className="group flex flex-col rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
+    shadow-lg shadow-black/40 hover:-translate-y-1 transition"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: i * 0.1 }}
+>
+  <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
 
-        <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
-          <Image
-            src="/image4.png"
-            alt="Leaderboard"
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-        </div>
-      </motion.div>
+  <p className="text-sm text-gray-300 leading-relaxed">
+    {f.desc}
+  </p>
+
+  <div className="relative mt-auto h-28 w-full overflow-hidden rounded-xl bg-black/40">
+    <Image
+      src={f.image}
+      alt={f.title}
+      fill
+      className="object-cover transition-transform duration-300 group-hover:scale-105"
+      priority={i === 0}
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+  </div>
+</motion.div>
+
 
     </div>
   </div>
