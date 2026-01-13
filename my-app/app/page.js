@@ -272,12 +272,7 @@ export default function Home() {
           >
             Try Juny Free
           </a>
-          <a
-            href="#demo"
-            className="rounded-2xl px-10 py-4 font-semibold border border-purple-600 hover:bg-purple-900/30"
-          >
-            Watch Demo
-          </a>
+
         </div>
       </section>
     </main>

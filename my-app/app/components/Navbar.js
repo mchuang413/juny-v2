@@ -41,7 +41,7 @@ const Example = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.4, ease: "easeIn" }}
       >
-        Join 600+ students already using Juny to master investing through interactive lessons, real-time simulations, and a competitive community. Build real-world financial skills in an engaging, game-like environment.
+        Join 2000+ students already using Juny to master investing through interactive lessons, real-time simulations, and a competitive community. Build real-world financial skills in an engaging, game-like environment.
       </motion.h2>
     </div>
 
