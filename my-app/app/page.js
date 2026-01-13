@@ -79,22 +79,16 @@ export default function Home() {
           </h2>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-
             {/* Feature 1 */}
             <motion.div
-              className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
+              className="group rounded-3xl overflow-hidden bg-[#0b0020] border border-purple-800/40
                 shadow-lg shadow-black/40 hover:-translate-y-1 transition"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-xl font-semibold mb-3">Interactive Lessons</h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                50+ visual units covering stocks, ETFs, and risk management.
-              </p>
-
-              <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
+              <div className="relative h-56 w-full overflow-hidden bg-black/40">
                 <Image
                   src="/image1.png"
                   alt="Interactive Lessons"
@@ -102,25 +96,29 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">
+                  Interactive Lessons
+                </h3>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  50+ visual units covering stocks, ETFs, and risk management.
+                </p>
               </div>
             </motion.div>
 
             {/* Feature 2 */}
             <motion.div
-              className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
+              className="group rounded-3xl overflow-hidden bg-[#0b0020] border border-purple-800/40
                 shadow-lg shadow-black/40 hover:-translate-y-1 transition"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h3 className="text-xl font-semibold mb-3">Paper Trading Simulator</h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Trade with real-time market data — risk free.
-              </p>
-
-              <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
+              <div className="relative h-56 w-full overflow-hidden bg-black/40">
                 <Image
                   src="/image2.png"
                   alt="Paper Trading Simulator"
@@ -128,25 +126,29 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">
+                  Paper Trading Simulator
+                </h3>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  Trade with real-time market data — risk free.
+                </p>
               </div>
             </motion.div>
 
             {/* Feature 3 */}
             <motion.div
-              className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
+              className="group rounded-3xl overflow-hidden bg-[#0b0020] border border-purple-800/40
                 shadow-lg shadow-black/40 hover:-translate-y-1 transition"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h3 className="text-xl font-semibold mb-3">Stock News Hub</h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Market news rewritten in student-friendly language.
-              </p>
-
-              <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
+              <div className="relative h-56 w-full overflow-hidden bg-black/40">
                 <Image
                   src="/image3.png"
                   alt="Stock News Hub"
@@ -154,25 +156,29 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">
+                  Stock News Hub
+                </h3>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  Market news rewritten in student-friendly language.
+                </p>
               </div>
             </motion.div>
 
             {/* Feature 4 */}
             <motion.div
-              className="group rounded-3xl p-6 bg-[#0b0020] border border-purple-800/40
+              className="group rounded-3xl overflow-hidden bg-[#0b0020] border border-purple-800/40
                 shadow-lg shadow-black/40 hover:-translate-y-1 transition"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h3 className="text-xl font-semibold mb-3">Leaderboard</h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Daily and weekly rankings that keep learning competitive.
-              </p>
-
-              <div className="relative mt-6 h-28 w-full overflow-hidden rounded-xl bg-black/40">
+              <div className="relative h-56 w-full overflow-hidden bg-black/40">
                 <Image
                   src="/image4.png"
                   alt="Leaderboard"
@@ -180,10 +186,18 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">
+                  Leaderboard
+                </h3>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  Daily and weekly rankings that keep learning competitive.
+                </p>
               </div>
             </motion.div>
-
           </div>
         </div>
       </section>
@@ -211,15 +225,9 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-10">The Journey</h2>
           <div className="space-y-4 text-gray-300 text-lg">
-            <p>
-              <strong>June 2024:</strong> First prototype launched.
-            </p>
-            <p>
-              <strong>August 2024:</strong> Alpaca integration + Stock News Hub.
-            </p>
-            <p>
-              <strong>2025–Present:</strong> Scaled to ~2,000 weekly users.
-            </p>
+            <p><strong>June 2024:</strong> First prototype launched.</p>
+            <p><strong>August 2024:</strong> Alpaca integration + Stock News Hub.</p>
+            <p><strong>2025–Present:</strong> Scaled to ~2,000 weekly users.</p>
           </div>
         </div>
       </section>
@@ -227,9 +235,7 @@ export default function Home() {
       {/* JUNY+ */}
       <section className="px-6 py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Optional Upgrade: Juny+
-          </h2>
+          <h2 className="text-4xl font-bold mb-6">Optional Upgrade: Juny+</h2>
           <p className="text-lg text-gray-300 mb-10">
             Juny+ unlocks advanced tools for power users while keeping Juny free
             and accessible for everyone.
@@ -265,15 +271,14 @@ export default function Home() {
           through personalized, gamified finance education.
         </p>
 
-        <div className="flex justify-center gap-4">
-          <a
-            href="https://juny-rmq3.vercel.app/"
-            className="rounded-2xl px-10 py-4 font-semibold bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 shadow-lg"
-          >
-            Try Juny Free
-          </a>
-
-        </div>
+        <a
+          href="https://juny-rmq3.vercel.app/"
+          className="rounded-2xl px-10 py-4 font-semibold bg-gradient-to-r
+            from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500
+            shadow-lg"
+        >
+          Try Juny Free
+        </a>
       </section>
     </main>
   );
