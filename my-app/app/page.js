@@ -71,6 +71,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FEATURES */}
       {/* FEATURES — STACKED VERTICALLY */}
       <section className="px-6 py-32 bg-gradient-to-b from-black via-purple-950/20 to-black">
         <div className="max-w-4xl mx-auto">
@@ -199,6 +200,59 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* IMPACT */}
+      <section className="px-6 py-32">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-10">Our Impact</h2>
+          <ul className="text-lg text-gray-300 space-y-2 mb-10">
+            <li>🌍 ~2,000 weekly active users</li>
+            <li>📈 1.5+ years of continuous iteration</li>
+            <li>🏆 3rd Place — Congressional App Challenge</li>
+          </ul>
+
+          <blockquote className="italic text-gray-400 max-w-2xl mx-auto">
+            “Juny made investing feel like a game instead of a guessing contest.
+            It taught me more in a week than a semester of economics.”
+            <br />— High School Student, California
+          </blockquote>
+        </div>
+      </section>
+
+      {/* JOURNEY */}
+      <section className="px-6 py-32 bg-gradient-to-b from-black via-purple-950/20 to-black">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-10">The Journey</h2>
+          <div className="space-y-4 text-gray-300 text-lg">
+            <p><strong>June 2024:</strong> First prototype launched.</p>
+            <p><strong>August 2024:</strong> Alpaca integration + Stock News Hub.</p>
+            <p><strong>2025–Present:</strong> Scaled to ~2,000 weekly users.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* JUNY+ */}
+      <section className="px-6 py-32">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">Optional Upgrade: Juny+</h2>
+          <p className="text-lg text-gray-300 mb-10">
+            Juny+ unlocks advanced tools for power users while keeping Juny free
+            and accessible for everyone.
+          </p>
+
+          <ul className="text-gray-300 space-y-2 mb-8">
+            <li>✅ Unlimited lessons</li>
+            <li>✅ Unlimited simulator access</li>
+            <li>✅ Curated portfolios</li>
+            <li>✅ Expanded news feed</li>
+            <li>✅ AI-powered investing feedback</li>
+          </ul>
+
+          <p className="text-sm text-gray-400 italic">
+            Juny stays focused on education — Juny+ simply adds depth.
+          </p>
         </div>
       </section>
 
